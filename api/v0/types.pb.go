@@ -6,7 +6,7 @@ Package capsule8_api_v0 is a generated protocol buffer package.
 
 It is generated from these files:
 	capsule8/api/v0/types.proto
-	capsule8/api/v0/event.proto
+	capsule8/api/v0/telemetry_event.proto
 	capsule8/api/v0/telemetry_service.proto
 	capsule8/api/v0/subscription.proto
 	capsule8/api/v0/expression.proto
@@ -17,7 +17,7 @@ It has these top-level messages:
 	IPv6Address
 	IPv6AddressAndPort
 	NetworkAddress
-	Event
+	TelemetryEvent
 	ChargenEvent
 	TickerEvent
 	ContainerEvent
@@ -29,7 +29,7 @@ It has these top-level messages:
 	NetworkEvent
 	GetEventsRequest
 	GetEventsResponse
-	TelemetryEvent
+	ReceivedTelemetryEvent
 	Subscription
 	ContainerFilter
 	EventFilter

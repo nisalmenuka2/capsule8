@@ -20,7 +20,7 @@ syntax = "proto3";
 package capsule8.api.v0;
 
 import "capsule8/api/v0/subscription.proto";
-import "capsule8/api/v0/event.proto";
+import "capsule8/api/v0/telemetry_event.proto";
 import "google/api/annotations.proto";
 
 //
@@ -50,11 +50,11 @@ message GetEventsRequest {
 // A response message containing telemetry events
 message GetEventsResponse {
         // Can publish one or more message(s) at a time
-        repeated TelemetryEvent events = 1;
+        repeated ReceivedTelemetryEvent events = 1;
 }
 
 // A telemetry event received from a Sensor or Recorder.
-message TelemetryEvent {
+message ReceivedTelemetryEvent {
         // The time that the event was received by the backplane (in micros
         // since Unix epoch)
         int64 publish_time_micros = 1;
@@ -62,7 +62,7 @@ message TelemetryEvent {
         // The actual event observed by the Sensor. For historical
         // event subscriptions, this event may be sent from the
         // Recorder.
-        Event event = 2;
+        TelemetryEvent event = 2;
 
         // An opaque ack for the event. If present, this ack must be sent to
         // the PubsubService's Acknowledge method or else the TelemetryService

@@ -19,7 +19,7 @@ package capsule8.api.v0;
 import "capsule8/api/v0/types.proto";
 
 // An event observed by the Sensor.
-message Event {
+message TelemetryEvent {
         // Unique identifier for the event
         string id = 1;
 

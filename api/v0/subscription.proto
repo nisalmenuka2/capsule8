@@ -16,7 +16,7 @@ syntax = "proto3";
 
 package capsule8.api.v0;
 
-import "capsule8/api/v0/event.proto";
+import "capsule8/api/v0/telemetry_event.proto";
 import "capsule8/api/v0/expression.proto";
 import "google/protobuf/wrappers.proto";
 
