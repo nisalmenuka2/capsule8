@@ -528,8 +528,6 @@ func (cg *CounterGroup) read(reader *bytes.Reader, format uint64) error {
 			}
 		}
 
-		var values []CounterValue
-
 		for i := uint64(0); i < nr; i++ {
 			value := CounterValue{}
 			err = binary.Read(reader, binary.LittleEndian,
@@ -546,7 +544,7 @@ func (cg *CounterGroup) read(reader *bytes.Reader, format uint64) error {
 				}
 			}
 
-			values = append(values, value)
+			cg.Values = append(cg.Values, value)
 		}
 
 		return nil
